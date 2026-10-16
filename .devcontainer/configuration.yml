@@ -1,0 +1,10 @@
+services:
+  app:
+    build: { context: ., dockerfile: Dockerfile }
+    command: sleep infinity
+    ports: ["8080:8080"]
+    volumes:
+      - ..:/workspace:cached
+      - m2cache:/root/.m2
+volumes:
+  m2cache:

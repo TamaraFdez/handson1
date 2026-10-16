@@ -1,0 +1,3 @@
+{ "name": "daw2627-spring",
+"dockerComposeFile": "configuration.yml", "service": "app",
+"workspaceFolder": "/workspace", "forwardPorts": [8080] }
