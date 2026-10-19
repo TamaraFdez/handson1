@@ -1,0 +1,10 @@
+<!-- templates/fragments/layout.html -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="capcalera(titol)">
+    <meta charset="UTF-8">
+    <title th:text="${titol}">Títol</title>
+    <link rel="stylesheet" th:href="@{/css/estil.css}">
+</head>
+<nav th:fragment="menu"><a th:href="@{/}">Inici</a> <a th:href="@{/alumnes}">Alumnes</a></nav>
+<footer th:fragment="peu"> CIFP Francesc de Borja Moll · DAW2</footer>
+</html>
