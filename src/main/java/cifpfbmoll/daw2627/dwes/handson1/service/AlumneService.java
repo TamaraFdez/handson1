@@ -3,6 +3,7 @@ package cifpfbmoll.daw2627.dwes.handson1.service;
 import cifpfbmoll.daw2627.dwes.handson1.model.*;
 
 import java.util.*;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,5 +28,9 @@ public class AlumneService {
 
     public void afegirNota(Long id, Nota nota) {
         findById(id).ifPresent(a -> a.getNotes().add(nota));
+    }
+
+    public double mitjana(Alumne a) {
+        return a.getNotes().stream().mapToInt(Nota::getQualificacio).average().orElse(0);
     }
 }
