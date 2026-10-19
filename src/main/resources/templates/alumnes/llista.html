@@ -1,0 +1,13 @@
+<p th:if="${#lists.isEmpty(alumnes)}">No hi ha alumnes</p>
+<table th:unless="${#lists.isEmpty(alumnes)}">
+    <tr>
+        <th>Nom</th>
+        <th>Curs</th>
+        <th></th>
+    </tr>
+    <tr th:each="a : ${alumnes}">
+        <td th:text="${a.nom + ' ' + a.cognoms}">Nom</td>
+        <td th:text="${a.curs}">Curs</td>
+        <td><a th:href="@{/alumnes/{id}(id=${a.id})}">Fitxa</a></td>
+    </tr>
+</table>
