@@ -1,0 +1,11 @@
+<h1 th:text="${alumne.nom + ' ' + alumne.cognoms}">Alumne</h1> <p>Curs: <span th:text="${alumne.curs}">DAW2</span></p>
+<table>
+    <tr>
+        <th>Mòdul</th>
+        <th>Nota</th>
+    </tr>
+    <tr th:each="n : ${alumne.notes}">
+        <td th:text="${n.modul}">DWES</td>
+        <td th:text="${n.qualificacio}" th:classappend="${n.qualificacio < 5} ? 'suspes'">7</td>
+    </tr>
+</table> <p>Mitjana: <b th:text="${#numbers.formatDecimal(mitjana, 1, 2)}">0</b></p>

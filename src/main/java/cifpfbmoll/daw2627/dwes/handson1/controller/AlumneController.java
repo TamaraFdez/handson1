@@ -33,4 +33,19 @@ public class AlumneController {
         model.addAttribute("mitjana", service.mitjana(a));
         return "alumnes/fitxa";
     }
+
+    @GetMapping("/{id}/notes/nova")
+    public String novaNota(@PathVariable Long id, Model model){
+        model.addAttribute("alumneid", id);
+        model.addAttribute("nota", new Nota());
+        return "alumnes/nota-form";
+    }
+
+    @PostMapping("/{id}/notes")
+    public String desaNota(@PathVariable Long id , @ModelAttribute("nota")Nota nota, RedirectAttributes ra){
+        service.afegirNota(id, nota);
+        ra.addFlashAttribute("ok", "Nota desada correctament");
+        return "redirect/alumnes/{id}";
+    }
+
 }

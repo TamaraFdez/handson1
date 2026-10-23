@@ -1,4 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="ca">
-<head th:replace="~{fragments/layout :: capcalera('Alumnes')}"></head> <body><nav th:replace="~{fragments/layout :: menu}"></nav><footer th:replace="~{fragments/layout :: peu}"></footer><h1 th:text="${missatge}">Missatge per defecte</h1></body>
+
+<head th:replace="~{fragments/layout :: capcalera('Alumnes')}"></head>
+
+<body>
+    <nav th:replace="~{fragments/layout :: menu}"></nav>
+    <footer th:replace="~{fragments/layout :: peu}"></footer>
+    <h1 th:text="${missatge}">Missatge per defecte</h1>
+
+</body>
+
 </html>
